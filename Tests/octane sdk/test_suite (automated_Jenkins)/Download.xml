@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Owners>
+  <OwnerId>4</OwnerId>
+  <OwnerType>TEST</OwnerType>
+  <Name><![CDATA[test_suite (automated_Jenkins)]]></Name>
+  <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+  <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+  <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+  <Owner>
+    <OwnerId>1012</OwnerId>
+    <OwnerType>USER_ASSETS</OwnerType>
+    <Name><![CDATA[Action1]]></Name>
+    <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+    <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+    <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+    <Relation>
+      <RelatedId>1011</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[TEST_Data]]></Name>
+      <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+      <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+      <Condition>NONE</Condition>
+      <Order>1</Order>
+    </Relation>
+  </Owner>
+  <Owner>
+    <OwnerId>4</OwnerId>
+    <OwnerType>TEST</OwnerType>
+    <Name><![CDATA[test_suite (automated_Jenkins)]]></Name>
+    <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+    <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+    <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+    <Relation>
+      <RelatedId>1011</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[TEST_Data]]></Name>
+      <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+      <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+    </Relation>
+    <Relation>
+      <RelatedId>1012</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[Action1]]></Name>
+      <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+      <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+    </Relation>
+    <Relation>
+      <RelatedId>1010</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[Main Test Flow]]></Name>
+      <FSRoot><![CDATA[Test\4\4\4]]></FSRoot>
+      <FSPath><![CDATA[Test\4\4\4]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test_suite (automated_Jenkins)]]></QCPath>
+    </Relation>
+  </Owner>
+</Owners>
