@@ -1,11 +1,11 @@
 ﻿Option Explicit
 
-'Dim MyMsgBox
-'Set MyMsgBox = DotNetFactory.CreateInstance("System.Windows.Forms.MessageBox", "System.Windows.Forms")
-
 Dim clientId, clientSecret, octaneUrl
 Dim sharedSpaceId, workspaceId, runId, suiteId, suiteRunId
 
+'These parameters should be added as inputs on the Start step and used as default values on the Action step
+'The values for these parameters can be received from the Jenkins server
+'octane_apiUser and octane_apiSecret should be added as additional parameters on Jenkins with providing API Access values
 clientId = Parameter("aClientId")
 clientSecret = Parameter("aClientSecret")
 octaneUrl = Parameter("aOctaneUrl")
@@ -15,40 +15,41 @@ runId = Parameter("aRunId")
 suiteId = Parameter("aSuiteId")
 suiteRunId = Parameter("aSuiteRunId")
 
+
+'Connect to Octane
 Dim restConnector, connectionInfo, isConnected
 Set restConnector = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Connector.RestConnector", "MicroFocus.Adm.Octane.Api.Core")
 Set connectionInfo = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Connector.UserPassConnectionInfo", "MicroFocus.Adm.Octane.Api.Core", clientId, clientSecret)
 isConnected = restConnector.Connect(octaneUrl, connectionInfo)
-'MyMsgBox.Show  isConnected, "Is Connected"
 
 Dim context, entityService
 Set context = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Services.RequestContext.WorkspaceContext", "MicroFocus.Adm.Octane.Api.Core", sharedSpaceId, workspaceId)
 Set entityService = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Services.NonGenericsEntityService", "MicroFocus.Adm.Octane.Api.Core", restConnector)
 
-Dim entType, entId, entFields, entFieldsAttach, run
+
+'Get Test ID from Automated Run ID (runId received from Jenkins)
+Dim entType, entId, entFields, test
 entType = "run"
 entId = runId
 entFields = Array("id", "test")
-entFieldsAttach = Array("id", "name", "author")
-Set run = entityService.GetById(context, entType, entId, entFields)
+Set test = entityService.GetById(context, entType, entId, entFields)
 
-Dim testType, testId, testFields, mtId, atest, script
-testType = "test_automated" 
-testId = run.GetValue("test").Id
-testFields = Array("id", "subtype", "name", "author", "owner", "test_runner", "covered_manual_test")
-Set atest = entityService.GetById(context, "test", testId, testFields)
-mtId = atest.GetValue("covered_manual_test").Id
+'Get Manual Test ID linked to the Automated Test (using covered_manual_test parameter)
+Dim testType, testId, testFields, manualTestId, automatedTest, script
+testType = "test" 
+testId = test.GetValue("test").Id
+testFields = Array("id", "subtype", "name", "covered_manual_test")
+Set automatedTest = entityService.GetById(context, "test", testId, testFields)
+manualTestId = automatedTest.GetValue("covered_manual_test").Id
 
-Set script = entityService.GetTestScript(context, mtId)
-
-'MyMsgBox.Show script.Script
+'Get Manual Test Script
+Set script = entityService.GetTestScript(context, manualTestId)
 
 
 'Write results to file
-Dim test, FSO, outfile
-Set test = entityService.GetById(context, testType, testId, testFields)
+Dim FSO, outfile
 Set FSO = CreateObject("Scripting.FileSystemObject")
-Set outFile = FSO.CreateTextFile("C:\Downloads\test_automated (Jenkins).txt",True)
+Set outFile = FSO.CreateTextFile("C:\Downloads\script(Jenkins).txt",True)
 outFile.WriteLine "Script: "
 outFile.WriteLine vbCrLf & script.Script
 outFile.Close
