@@ -32,7 +32,7 @@ Set entityService = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core
 Dim entType, entId, entFields, entFieldsAttach
 entType = "test_suite"
 entId = suiteId
-entFields = Array("id", "name", "source_id_udf", "author", "creation_time")
+entFields = Array("id", "name", "author", "creation_time")
 entFieldsAttach = Array("id", "name")
 
 
@@ -64,7 +64,7 @@ Set FSO = CreateObject("Scripting.FileSystemObject")
 Set outFile = FSO.CreateTextFile("C:\Downloads\test_suite (automated, Jenkins).txt",True)
 outFile.WriteLine "Test Suite ID: " + testSuite.Id
 outFile.WriteLine vbCrLf & "Test Suite Name: " + testSuite.Name
-outFile.WriteLine "ALM QC ID: " + testSuite.GetValue("source_id_udf")
+'outFile.WriteLine "ALM QC ID: " + testSuite.GetValue("source_id_udf")
 outFile.WriteLine "Author: " + testSuite.GetValue("author").Name
 outFile.WriteLine vbCrLf & "Creatin Time: " + testSuite.GetValue("creation_time")
 outFile.WriteLine vbCrLf & "Attachments: " + attachmentsName

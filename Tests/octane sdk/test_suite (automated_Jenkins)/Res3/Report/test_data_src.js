@@ -1,0 +1,1 @@
+﻿var __testDataSource={items:[{dataFilePath:'Default.xlsx',dataFileFormat:'excel',dataFileFolder:'C:\\Users\\Administrator\\Desktop\\sdk scripts\\DEFAULT_sdk\\Tests\\octane sdk\\test_suite (automated_Jenkins)\\Res3',namePairs:[]}]};

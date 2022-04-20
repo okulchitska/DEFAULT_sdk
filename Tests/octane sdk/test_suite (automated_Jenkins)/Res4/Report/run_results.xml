@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Results version="1.0">
+<ReportNode type="testrun">
+<ReportNode type="Iteration">
+<ReportNode type="Action">
+<Data>
+    <Name>Action1</Name>
+    <Description />
+    <StartTime>2022-04-20 07:53:27</StartTime>
+    <Result>Done</Result>
+    <InputParameters>
+      <Parameter name="aClientId" value="sdk_xjg9mjy04o9yla386x51km0r3" type="System.String" />
+      <Parameter name="aClientSecret" value="?2031012853861211027Q" type="System.String" />
+      <Parameter name="aOctaneUrl" value="http://15.122.95.229:8085" type="System.String" />
+      <Parameter name="aOctaneSpaceId" value="1001" type="System.String" />
+      <Parameter name="aOctaneWorkspaceId" value="3002" type="System.String" />
+      <Parameter name="aRunId" value="" type="System.String" />
+      <Parameter name="aSuiteId" value="1126" type="System.String" />
+      <Parameter name="aSuiteRunId" value="" type="System.String" />
+    </InputParameters>
+    <Extension>
+      <IconKey>8d6ca8c84d5444c2883b6b29fc076cde</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<Data>
+    <Name>Action0</Name>
+    <Description />
+    <StartTime>2022-04-20 07:53:27</StartTime>
+    <Duration>1</Duration>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>6374c18e771446d2ad5282381c2c5f7a</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Index>1</Index>
+    <TestedApplications />
+  </Data>
+</ReportNode>
+<Data>
+    <Name>test_suite (automated_Jenkins)</Name>
+    <ToolName>Micro Focus Unified Functional Testing</ToolName>
+    <ToolVersion>15.0</ToolVersion>
+    <ToolVersionStringLiteral>15.0</ToolVersionStringLiteral>
+    <Description />
+    <StartTime>2022-04-20 07:53:25</StartTime>
+    <Duration>3</Duration>
+    <Result>Done</Result>
+    <InputParameters>
+      <Parameter name="octane_apiUser" value="sdk_xjg9mjy04o9yla386x51km0r3" type="System.String" />
+      <Parameter name="octane_apiSecret" value="?2031012853861211027Q" type="System.String" />
+      <Parameter name="octaneUrl" value="http://15.122.95.229:8085" type="System.String" />
+      <Parameter name="octaneSpaceId" value="1001" type="System.String" />
+      <Parameter name="octaneWorkspaceId" value="3002" type="System.String" />
+      <Parameter name="runId" value="" type="System.String" />
+      <Parameter name="suiteId" value="1126" type="System.String" />
+      <Parameter name="suiteRunId" value="" type="System.String" />
+    </InputParameters>
+    <Extension>
+      <IconKey>45687d20f7f644298845353227b8b711</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Environment>
+      <Timezone>-07:00:00</Timezone>
+      <Locale>English (United States)</Locale>
+      <User>Administrator</User>
+      <CpuInfo>Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz</CpuInfo>
+      <NumberOfCores>2</NumberOfCores>
+      <TotalMemory>10240</TotalMemory>
+      <HostName>IVW12B</HostName>
+      <OSInfo>Windows 2012 R2</OSInfo>
+    </Environment>
+    <TestedApplications />
+    <Links>
+      <Link type="DataTable" reference="Default.xlsx" displayname="Default Data Table" />
+    </Links>
+  </Data>
+</ReportNode>
+<GeneralInfo>
+    <ResultName>Res4</ResultName>
+    <RunStartTime>2022-04-20 07:53:25</RunStartTime>
+    <Timezone>-07:00:00</Timezone>
+    <OrchestrationToolName>Micro Focus Unified Functional Testing</OrchestrationToolName>
+    <OrchestrationToolVersion>15.0</OrchestrationToolVersion>
+    <OrchestrationToolVersionStringLiteral>15.0</OrchestrationToolVersionStringLiteral>
+  </GeneralInfo>
+</Results>
