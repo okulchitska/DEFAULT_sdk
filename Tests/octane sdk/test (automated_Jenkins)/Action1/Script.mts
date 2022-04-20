@@ -74,7 +74,7 @@ outFile.WriteLine "Test ID: " + test.Id
 outFile.WriteLine "Test Name: " + test.Name
 outFile.WriteLine vbCrLf & "Test Type: " + test.Subtype
 outFile.WriteLine "Author: " + test.GetValue("author").Name
-outFile.WriteLine vbCrLf & "Owner: " + test.GetValue ("owner").Name
+'outFile.WriteLine vbCrLf & "Owner: " + test.GetValue ("owner").Name
 outFile.WriteLine "UFT test runner: #" + test.GetValue("test_runner").id + ", " + test.GetValue("test_runner").Name
 outFile.WriteLine vbCrLf & "Attachments: " + attachmentsName
 outFile.Close
