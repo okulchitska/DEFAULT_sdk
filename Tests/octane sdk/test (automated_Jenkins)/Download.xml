@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Owners>
+  <OwnerId>1</OwnerId>
+  <OwnerType>TEST</OwnerType>
+  <Name><![CDATA[test (automated_Jenkins)]]></Name>
+  <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+  <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+  <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+  <Owner>
+    <OwnerId>1</OwnerId>
+    <OwnerType>TEST</OwnerType>
+    <Name><![CDATA[test (automated_Jenkins)]]></Name>
+    <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+    <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+    <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+    <Relation>
+      <RelatedId>1003</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[Action1]]></Name>
+      <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+      <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+    </Relation>
+    <Relation>
+      <RelatedId>1001</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[Main Test Flow]]></Name>
+      <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+      <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+    </Relation>
+    <Relation>
+      <RelatedId>1002</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[TEST_Data]]></Name>
+      <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+      <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+    </Relation>
+  </Owner>
+  <Owner>
+    <OwnerId>1003</OwnerId>
+    <OwnerType>USER_ASSETS</OwnerType>
+    <Name><![CDATA[Action1]]></Name>
+    <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+    <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+    <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+    <Relation>
+      <RelatedId>1002</RelatedId>
+      <RelatedType>USER_ASSETS</RelatedType>
+      <Name><![CDATA[TEST_Data]]></Name>
+      <FSRoot><![CDATA[Test\1\1\1]]></FSRoot>
+      <FSPath><![CDATA[Test\1\1\1]]></FSPath>
+      <QCPath><![CDATA[Subject\octane sdk\test (automated_Jenkins)]]></QCPath>
+      <Condition>NONE</Condition>
+      <Order>1</Order>
+    </Relation>
+  </Owner>
+</Owners>

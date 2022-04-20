@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Results version="1.0">
+<ReportNode type="testrun">
+<ReportNode type="Iteration">
+<ReportNode type="Action">
+<ReportNode type="Step">
+<Data>
+    <Name>Object required: 'GetValue(...)'</Name>
+    <ErrorText>Object required: 'GetValue(...)'</ErrorText>
+    <Description>&lt;BR/&gt;Line (71): &amp;quot;outFile.WriteLine vbCrLf &amp;amp; &amp;quot;Owner: &amp;quot; + test.GetValue (&amp;quot;owner&amp;quot;).Name&amp;quot;.</Description>
+    <StartTime>2022-04-20 07:28:42</StartTime>
+    <Result>Failed</Result>
+    <Extension>
+      <StackTrace>
+        <StackFrame>
+          <ModuleName><![CDATA[Action1]]></ModuleName>
+          <FileName><![CDATA[Action1]]></FileName>
+          <Language><![CDATA[VBScript - script block]]></Language>
+          <FunctionName><![CDATA[VBScript global code]]></FunctionName>
+          <Scripts><![CDATA[outFile.WriteLine vbCrLf & "Owner: " + test.GetValue ("owner").Name]]></Scripts>
+          <LineNo><![CDATA[71]]></LineNo>
+        </StackFrame>
+      </StackTrace>
+      <IconKey>165e053419c6409dacbdccb9543d9df8</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <MergeIsErrorIcon>True</MergeIsErrorIcon>
+    </Extension>
+    <Snapshot reference="Resources\Snapshots\ca3784f8-3e00-435f-a8b6-28ed0706d5e8.jpeg" />
+  </Data>
+</ReportNode>
+<ReportNode type="Step">
+<Data>
+    <Name>Stop Run</Name>
+    <Description>Run stopped by user.</Description>
+    <StartTime>2022-04-20 07:37:47</StartTime>
+    <Result>Information</Result>
+    <Extension>
+      <IconKey>c62ab439464044bb85587405539d4ccb</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<Data>
+    <Name>Action1</Name>
+    <Description />
+    <StartTime>2022-04-20 07:28:41</StartTime>
+    <Duration>546</Duration>
+    <Result>Failed</Result>
+    <InputParameters>
+      <Parameter name="aClientId" value="sdk_xjg9mjy04o9yla386x51km0r3" type="System.String" />
+      <Parameter name="aClientSecret" value="?2031012853861211027Q" type="System.String" />
+      <Parameter name="aOctaneUrl" value="http://15.122.95.229:8085" type="System.String" />
+      <Parameter name="aOctaneSpaceId" value="1001" type="System.String" />
+      <Parameter name="aOctaneWorkspaceId" value="3002" type="System.String" />
+      <Parameter name="aRunId" value="1250" type="System.String" />
+      <Parameter name="aSuiteId" value="" type="System.String" />
+      <Parameter name="aSuiteRunId" value="" type="System.String" />
+    </InputParameters>
+    <Extension>
+      <IconKey>11bdae305f01488bb4da91771f66dbbd</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<Data>
+    <Name>Action0</Name>
+    <Description />
+    <StartTime>2022-04-20 07:28:41</StartTime>
+    <Duration>546</Duration>
+    <Result>Failed</Result>
+    <Extension>
+      <IconKey>adc01cdd23cb4d2dad429dbf6a31c96e</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Index>1</Index>
+    <TestedApplications />
+  </Data>
+</ReportNode>
+<Data>
+    <Name>test (automated_Jenkins)</Name>
+    <ToolName>Micro Focus Unified Functional Testing</ToolName>
+    <ToolVersion>15.0</ToolVersion>
+    <ToolVersionStringLiteral>15.0</ToolVersionStringLiteral>
+    <Description />
+    <StartTime>2022-04-20 07:28:39</StartTime>
+    <Duration>548</Duration>
+    <Result>Failed</Result>
+    <InputParameters>
+      <Parameter name="octane_apiUser" value="sdk_xjg9mjy04o9yla386x51km0r3" type="System.String" />
+      <Parameter name="octane_apiSecret" value="?2031012853861211027Q" type="System.String" />
+      <Parameter name="octaneUrl" value="http://15.122.95.229:8085" type="System.String" />
+      <Parameter name="octaneSpaceId" value="1001" type="System.String" />
+      <Parameter name="octaneWorkspaceId" value="3002" type="System.String" />
+      <Parameter name="runId" value="1250" type="System.String" />
+      <Parameter name="suiteId" value="" type="System.String" />
+      <Parameter name="suiteRunId" value="" type="System.String" />
+    </InputParameters>
+    <Extension>
+      <IconKey>d4849ab78a54436d97793d70cd4cd023</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Environment>
+      <Timezone>-07:00:00</Timezone>
+      <Locale>English (United States)</Locale>
+      <User>Administrator</User>
+      <CpuInfo>Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz</CpuInfo>
+      <NumberOfCores>2</NumberOfCores>
+      <TotalMemory>10240</TotalMemory>
+      <HostName>IVW12B</HostName>
+      <OSInfo>Windows 2012 R2</OSInfo>
+    </Environment>
+    <TestedApplications />
+    <Links>
+      <Link type="DataTable" reference="Default.xlsx" displayname="Default Data Table" />
+    </Links>
+  </Data>
+</ReportNode>
+<GeneralInfo>
+    <ResultName>Res2</ResultName>
+    <RunStartTime>2022-04-20 07:28:39</RunStartTime>
+    <Timezone>-07:00:00</Timezone>
+    <OrchestrationToolName>Micro Focus Unified Functional Testing</OrchestrationToolName>
+    <OrchestrationToolVersion>15.0</OrchestrationToolVersion>
+    <OrchestrationToolVersionStringLiteral>15.0</OrchestrationToolVersionStringLiteral>
+  </GeneralInfo>
+</Results>
