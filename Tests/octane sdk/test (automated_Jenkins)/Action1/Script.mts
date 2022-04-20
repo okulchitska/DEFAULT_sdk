@@ -1,11 +1,11 @@
 ﻿Option Explicit
 
-Dim clientId, clientSecret, octaneUrl
-Dim sharedSpaceId, workspaceId, runId, suiteId, suiteRunId
+Dim MyMsgBox
+Set MyMsgBox = DotNetFactory.CreateInstance("System.Windows.Forms.MessageBox", "System.Windows.Forms")
 
-'These parameters should be added as inputs on the Start step and used as default values on the Action step
-'The values for these parameters can be received from the Jenkins server
-'octane_apiUser and octane_apiSecret should be added as additional parameters on Jenkins with providing API Access values
+Dim clientId, clientSecret, octaneUrl
+Dim sharedSpaceId, workspaceId, runId
+
 clientId = Parameter("aClientId")
 clientSecret = Parameter("aClientSecret")
 octaneUrl = Parameter("aOctaneUrl")
@@ -15,19 +15,16 @@ runId = Parameter("aRunId")
 'suiteId = Parameter("aSuiteId")
 'suiteRunId = Parameter("aSuiteRunId")
 
-
-'Connect to Octane
 Dim restConnector, connectionInfo, isConnected
 Set restConnector = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Connector.RestConnector", "MicroFocus.Adm.Octane.Api.Core")
 Set connectionInfo = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Connector.UserPassConnectionInfo", "MicroFocus.Adm.Octane.Api.Core", clientId, clientSecret)
 isConnected = restConnector.Connect(octaneUrl, connectionInfo)
+'MyMsgBox.Show  isConnected, "Is Connected"
 
 Dim context, entityService
 Set context = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Services.RequestContext.WorkspaceContext", "MicroFocus.Adm.Octane.Api.Core", sharedSpaceId, workspaceId)
 Set entityService = DotNetFactory.CreateInstance("MicroFocus.Adm.Octane.Api.Core.Services.NonGenericsEntityService", "MicroFocus.Adm.Octane.Api.Core", restConnector)
 
-
-'Get Test ID from Octane by Run ID (received from Jenkins)
 Dim entType, entId, entFields, entFieldsAttach, run
 entType = "run"
 entId = runId
@@ -35,16 +32,13 @@ entFields = Array("id", "test")
 entFieldsAttach = Array("id", "name", "author")
 Set run = entityService.GetById(context, entType, entId, entFields)
 
-
-'Get Test's fields values from Octane by Test ID
 Dim testType, testId, testFields, testFieldsAttach
-testType = "test"
+testType = "test" 'run.GetValue("test").Type
 testId = run.GetValue("test").Id
 testFields = Array("id", "subtype", "name", "author", "owner", "test_runner")
 testFieldsAttach = Array("id", "name")
+'MyMsgBox.Show testType + " " + testId
 
-
-'Get attachments and download
 Dim attachmentsList, attachmentsList1, attachmentsList2, attachmentsName, orderBy, limit, offset
 orderBy = "id"
 limit = CInt(2)
@@ -63,9 +57,9 @@ For i = 0 To attachmentsList.BaseEntities.Count - 1
 	attachmentsName = attachmentsName + element.Name
 	entityService.DownloadAttachment "/api/shared_spaces/" +sharedSpaceId+ "/workspaces/" +workspaceId+ "/attachments/" +element.Id+ "/" + element.Name, "C:\\Downloads\\" +element.Name
 Next
+'MyMsgBox.Show "Attachments: " + attachmentsName, "Attachments"
 
-
-'Write results to text file
+'Write results to file
 Dim test, FSO, outfile
 Set test = entityService.GetById(context, testType, testId, testFields)
 Set FSO = CreateObject("Scripting.FileSystemObject")
